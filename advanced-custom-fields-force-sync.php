@@ -3,7 +3,7 @@
  Plugin Name: Advanced Custom Fields Force Sync
  Plugin URI:  
  Description: Force Advanced Custom Fields Field Groups to sync from their json files.
- Version: 1.0.0
+ Version: 1.0.1
  Author:      Chris Bellew
  License:     GPL2
  License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -27,7 +27,7 @@ class ACF_Force_Sync {
 	public function custom_actions( $actions, $post ) {
 		if('acf-field-group' === $post->post_type) {
 			$url = $this->create_link($post); //admin_url( 'admin.php?page=acf-force-sync&post=' . $post->ID );
-			$actions['force-sync'] = sprintf('<a href="%s">%s</a>"', $url, __('Force Sync', 'ACF_Force_Sync'));
+			$actions['force-sync'] = sprintf('<a href="%s">%s</a>', $url, __('Force Sync', 'ACF_Force_Sync'));
 		}
 		return $actions;
 	}
